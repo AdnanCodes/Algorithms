@@ -15,9 +15,9 @@ def rock_paper_scissors(n):
         if rounds_left_play == 0:#end case where rounds reach 0, do no more plays and break out
             outcomes.append(plays_done)
             return
-        for i in range(0,len(plays)):
-             # Add plays to each of plays_done, call the function itself again with less round
-             #
+        for play in plays: #play must made in total available plays per round
+             # Add play to each of plays_done, call the function itself again with less round
+             game(plays_done + [play], rounds_left_play-1)
     
     game([],n)
 
